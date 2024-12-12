@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Natal</title>
+    <style>
+        body {
+    background: #0b1a5e;
+    width: 100vw;
+    overflow-x: hidden; /* 防止 body 產生水平滾動 */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden; /* 防止 html 產生水平滾動 */
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    margin: 20vh auto 0 auto;
+    background: #0b1a5e;
+    border-radius: 120px;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.tree {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 13%;
+    top: 5%;
+}
+
+.tree-triangle3 {
+    position: absolute;
+    width: 66%;
+    height: 36%;
+    bottom: 20%;
+    left: 3.5%;
+    background: #034f33;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.tree-triangle2 {
+    position: absolute;
+    width: 53%;
+    height: 33%;
+    bottom: 35%;
+    left: 10%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: #046944;
+    z-index: 2;
+}
+
+.tree-triangle1 {
+    position: absolute;
+    width: 42%;
+    height: 25%;
+    bottom: 50%;
+    left: 15.5%;
+    background: #038052;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 3;
+}
+
+.trunk {
+    position: absolute;
+    width: 10%;
+    height: 16%;
+    background: #66503e;
+    z-index: -1;
+    bottom: 5%;
+    left: 32%;
+}
+
+.ornament {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #033b26;
+    z-index: 4;
+}
+
+.shine {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    top: 10%;
+    right: 11%;
+    border-radius: 50%;
+    background: white;
+    filter: opacity(60%);
+}
+
+.or1 {
+    left: 28%;
+    top: 34%;
+    background: #0742d9;
+}
+
+.or2 {
+    left: 40%;
+    top: 45%;
+    background: #c91212;
+}
+
+.or3 {
+    left: 20%;
+    top: 49%;
+    background: #dbb700;
+}
+
+.or4 {
+    left: 34%;
+    top: 62%;
+    background: #0742d9;
+}
+
+.or5 {
+    left: 50%;
+    top: 69%;
+    background: #dbb700;
+}
+
+.or6 {
+    left: 15%;
+    top: 68%;
+    background: #c91212;
+}
+
+.star {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #ffe380;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    left: 26.5%;
+    top: 11%;
+    z-index: 4;
+}
+
+.star-highlight {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #fff1bf;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        50% 70%,
+        50% 60%,
+        50% 46%,
+        50% 36%
+    );
+    left: 26.5%;
+    top: 11%;
+    z-index: 4;
+}
+
+.star-light {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #fff1bf;
+    filter: opacity(0.7);
+    border-radius: 50%;
+    left: 26.5%;
+    top: 11%;
+    z-index: 3;
+    animation: star 3s ease-in-out infinite;
+}
+
+@keyframes star {
+    100% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    0% {
+        transform: scale(0.5);
+    }
+}
+
+.message {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+
+.message p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #E73C7E;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 10px rgb(255, 12, 12);
+    transition: .2s;
+}
+
+.button:hover {
+    background-color: #C0392B;
+    transform: scale(.95);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tree">
+            <div class="tree-triangle1"></div>
+            <div class="tree-triangle2"></div>
+            <div class="tree-triangle3"></div>
+            <div class="ornament or1">
+                <div class="shine"></div>
+            </div>
+            <div class="ornament or2">
+                <div class="shine"></div>
+            </div>
+            <div class="ornament or3">
+                <div class="shine"></div>
+            </div>
+            <div class="ornament or4">
+                <div class="shine"></div>
+            </div>
+            <div class="ornament or5">
+                <div class="shine"></div>
+            </div>
+            <div class="ornament or6">
+                <div class="shine"></div>
+            </div>
+            <div class="trunk"></div>
+            <div class="star-light"></div>
+            <div class="star"></div>
+            <div class="star-highlight"></div>
+        </div>
+    </div>
+    <div class="message">
+        <p>Feliz Natal e um próspero Ano Novo!</p>
+        <p>Atenciosamente, IINFO23</p>
+    </div>
+    <button class="button" onclick="alert('Desejamos a você um Feliz Natal e um Ano Novo cheio de realizações!')">Clique aqui para uma mensagem especial!</button>
+</body>
+</html>
